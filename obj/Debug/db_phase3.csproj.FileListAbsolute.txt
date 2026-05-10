@@ -1,0 +1,11 @@
+D:\Uni\db_phase3\obj\Debug\db_phase3.csproj.AssemblyReference.cache
+D:\Uni\db_phase3\obj\Debug\db_phase3.Properties.Resources.resources
+D:\Uni\db_phase3\obj\Debug\db_phase3.csproj.GenerateResource.cache
+D:\Uni\db_phase3\obj\Debug\db_phase3.csproj.CoreCompileInputs.cache
+D:\Uni\db_phase3\bin\Debug\db_phase3.exe.config
+D:\Uni\db_phase3\bin\Debug\db_phase3.exe
+D:\Uni\db_phase3\bin\Debug\db_phase3.pdb
+D:\Uni\db_phase3\obj\Debug\DB_P3.Form1.resources
+D:\Uni\db_phase3\obj\Debug\db_phase3.exe
+D:\Uni\db_phase3\obj\Debug\db_phase3.pdb
+D:\Uni\db_phase3\obj\Debug\db_phase3.exe.config
