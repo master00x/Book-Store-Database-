@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Uni\\db_phase3\\",
+  "WorkspaceRootPath": "D:\\Uni\\DB-Assignment\\Book-Store-database-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6546B684-D4A6-479D-94DC-F51CE6F50FCD}|db_phase3.csproj|d:\\uni\\db_phase3\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6546B684-D4A6-479D-94DC-F51CE6F50FCD}|db_phase3.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6546B684-D4A6-479D-94DC-F51CE6F50FCD}|db_phase3.csproj|d:\\uni\\db-assignment\\book-store-database-\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6546B684-D4A6-479D-94DC-F51CE6F50FCD}|db_phase3.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6546B684-D4A6-479D-94DC-F51CE6F50FCD}|db_phase3.csproj|d:\\uni\\db_phase3\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6546B684-D4A6-479D-94DC-F51CE6F50FCD}|db_phase3.csproj|D:\\Uni\\DB-Assignment\\Book-Store-database-\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6546B684-D4A6-479D-94DC-F51CE6F50FCD}|db_phase3.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6546B684-D4A6-479D-94DC-F51CE6F50FCD}|db_phase3.csproj|d:\\uni\\db_phase3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6546B684-D4A6-479D-94DC-F51CE6F50FCD}|db_phase3.csproj|D:\\Uni\\DB-Assignment\\Book-Store-database-\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6546B684-D4A6-479D-94DC-F51CE6F50FCD}|db_phase3.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6546B684-D4A6-479D-94DC-F51CE6F50FCD}|db_phase3.csproj|d:\\uni\\db_phase3\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6546B684-D4A6-479D-94DC-F51CE6F50FCD}|db_phase3.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6546B684-D4A6-479D-94DC-F51CE6F50FCD}|db_phase3.csproj|D:\\Uni\\DB-Assignment\\Book-Store-database-\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6546B684-D4A6-479D-94DC-F51CE6F50FCD}|db_phase3.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,15 +26,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "D:\\Uni\\db_phase3\\Form1.cs",
+              "DocumentMoniker": "D:\\Uni\\DB-Assignment\\Book-Store-database-\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "D:\\Uni\\db_phase3\\Form1.cs [Design]*",
+              "ToolTip": "D:\\Uni\\DB-Assignment\\Book-Store-database-\\Form1.cs [Design]*",
               "RelativeToolTip": "Form1.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-10T20:45:02.096Z",
@@ -55,13 +55,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "D:\\Uni\\db_phase3\\Form1.Designer.cs",
+              "DocumentMoniker": "D:\\Uni\\DB-Assignment\\Book-Store-database-\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Form1.Designer.cs",
-              "ToolTip": "D:\\Uni\\db_phase3\\Form1.Designer.cs*",
-              "RelativeToolTip": "Form1.Designer.cs*",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAgwJMAAAABAAAAAAAAAA==",
+              "ToolTip": "D:\\Uni\\DB-Assignment\\Book-Store-database-\\Form1.Designer.cs",
+              "RelativeToolTip": "Form1.Designer.cs",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAgwCcAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-10T20:56:01.181Z",
               "EditorCaption": ""
@@ -70,9 +70,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Uni\\db_phase3\\Program.cs",
+              "DocumentMoniker": "D:\\Uni\\DB-Assignment\\Book-Store-database-\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Uni\\db_phase3\\Program.cs",
+              "ToolTip": "D:\\Uni\\DB-Assignment\\Book-Store-database-\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -83,11 +83,11 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\Uni\\db_phase3\\Form1.cs",
+              "DocumentMoniker": "D:\\Uni\\DB-Assignment\\Book-Store-database-\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "D:\\Uni\\db_phase3\\Form1.cs*",
+              "ToolTip": "D:\\Uni\\DB-Assignment\\Book-Store-database-\\Form1.cs*",
               "RelativeToolTip": "Form1.cs*",
-              "ViewState": "AgIAAIEBAAAAAAAAAAAgwJQBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAuwL4BAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-10T20:48:35.867Z",
               "EditorCaption": ""

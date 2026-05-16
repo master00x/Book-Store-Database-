@@ -14,7 +14,7 @@ namespace DB_P3
             InitializeComponent();
         }
 
-        // ── INSERT BOOK ───────────────────────────────────────────
+        // INSERT BOOK
         private void button1_Click(object sender, EventArgs e)
         {
             using (InsertBookForm inputForm = new InsertBookForm())
@@ -43,7 +43,7 @@ namespace DB_P3
             }
         }
 
-        // ── INSERT AUTHOR ─────────────────────────────────────────
+        // INSERT AUTHOR
         private void button3_Click(object sender, EventArgs e)
         {
             using (InsertAuthorForm inputForm = new InsertAuthorForm())
@@ -73,7 +73,7 @@ namespace DB_P3
             }
         }
 
-        // ── DELETE BOOK ───────────────────────────────────────────
+        // DELETE BOOK
         private void btnDeleteBook_Click(object sender, EventArgs e)
         {
             string isbn = Microsoft.VisualBasic.Interaction.InputBox(
@@ -96,7 +96,7 @@ namespace DB_P3
             catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
         }
 
-        // ── DELETE ORDER ──────────────────────────────────────────
+        // DELETE ORDER
         private void btnDeleteOrder_Click(object sender, EventArgs e)
         {
             string orderId = Microsoft.VisualBasic.Interaction.InputBox(
@@ -124,7 +124,7 @@ namespace DB_P3
             catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
         }
 
-        // ── UPDATE ORDER DETAILS ──────────────────────────────────
+        // UPDATE ORDER DETAILS
         private void btnUpdateOrderDetails_Click(object sender, EventArgs e)
         {
             using (UpdateOrderDetailsForm f = new UpdateOrderDetailsForm())
@@ -155,7 +155,7 @@ namespace DB_P3
             }
         }
 
-        // ── UPDATE FORMAT ─────────────────────────────────────────
+        // UPDATE FORMAT
         private void btnUpdateFormat_Click(object sender, EventArgs e)
         {
             using (UpdateFormatForm f = new UpdateFormatForm())
@@ -186,7 +186,7 @@ namespace DB_P3
             }
         }
 
-        // ── SELECT TABLE ──────────────────────────────────────────
+        // SELECT TABLE
         private void btnSelectTable_Click(object sender, EventArgs e)
         {
             // Ask user which table
@@ -225,35 +225,36 @@ namespace DB_P3
             catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
         }
 
-        // ── JOIN TABLES ───────────────────────────────────────────
+        // JOIN TABLES
+        // CROSS JOIN TABLES
         private void btnJoinTables_Click(object sender, EventArgs e)
         {
-            // Join Books with their Authors via "written by"
-            string query = @"
-                SELECT b.ISBN, b.Title, b.Genre, b.Target_age,
-                       a.first_name, a.last_name, a.royalty_percentages
-                FROM Book b
-                INNER JOIN [written by] wb ON b.ISBN = wb.ISBN
-                INNER JOIN Authors a       ON wb.author_id = a.author_id";
-            try
+            using (CrossJoinForm f = new CrossJoinForm())
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                if (f.ShowDialog() == DialogResult.OK)
                 {
-                    conn.Open();
-                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    dataGridView1.DataSource = dt;
+                    string query = $"SELECT * FROM {f.Table1} CROSS JOIN {f.Table2}";
+                    try
+                    {
+                        using (SqlConnection conn = new SqlConnection(connectionString))
+                        {
+                            conn.Open();
+                            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                            DataTable dt = new DataTable();
+                            da.Fill(dt);
+                            dataGridView1.DataSource = dt;
+                        }
+                    }
+                    catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
                 }
             }
-            catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
         }
 
-        // ── UNUSED button4 ────────────────────────────────────────
+        // UNUSED button4
         private void button4_Click(object sender, EventArgs e) { }
     }
 
-    // ── INPUT FORM: INSERT BOOK ───────────────────────────────────
+    // INPUT FORM: INSERT BOOK
     public class InsertBookForm : Form
     {
         public string ISBN { get; private set; }
@@ -289,7 +290,7 @@ namespace DB_P3
         }
     }
 
-    // ── INPUT FORM: INSERT AUTHOR ─────────────────────────────────
+    // INPUT FORM: INSERT AUTHOR
     public class InsertAuthorForm : Form
     {
         public string AuthorId { get; private set; }
@@ -328,7 +329,7 @@ namespace DB_P3
         }
     }
 
-    // ── INPUT FORM: UPDATE ORDER DETAILS ──────────────────────────
+    //INPUT FORM: UPDATE ORDER DETAILS
     public class UpdateOrderDetailsForm : Form
     {
         public string OrderDetailId { get; private set; }
@@ -366,7 +367,7 @@ namespace DB_P3
         }
     }
 
-    // ── INPUT FORM: UPDATE FORMAT ─────────────────────────────────
+    // INPUT FORM: UPDATE FORMAT
     public class UpdateFormatForm : Form
     {
         public string FormatId { get; private set; }
@@ -401,5 +402,46 @@ namespace DB_P3
             this.Controls.Add(layout);
             this.AcceptButton = btnOK;
         }
+    }
+}
+// INPUT FORM: CROSS JOIN
+public class CrossJoinForm : Form
+{
+    public string Table1 { get; private set; }
+    public string Table2 { get; private set; }
+
+    private ComboBox cmbTable1 = new ComboBox();
+    private ComboBox cmbTable2 = new ComboBox();
+
+    public CrossJoinForm()
+    {
+        this.Text = "Cross Join Tables";
+        this.Size = new System.Drawing.Size(320, 180);
+        this.FormBorderStyle = FormBorderStyle.FixedDialog;
+        this.StartPosition = FormStartPosition.CenterParent;
+
+        string[] tables = { "Book", "Authors", "Format", "[Order]", "[Order Details]", "Royalty", "[Retail Partner]", "[written by]" };
+        cmbTable1.Items.AddRange(tables); cmbTable1.DropDownStyle = ComboBoxStyle.DropDownList; cmbTable1.SelectedIndex = 0;
+        cmbTable2.Items.AddRange(tables); cmbTable2.DropDownStyle = ComboBoxStyle.DropDownList; cmbTable2.SelectedIndex = 1;
+
+        var layout = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 2, RowCount = 3, Padding = new System.Windows.Forms.Padding(10) };
+        layout.Controls.Add(new Label { Text = "Table 1:", Anchor = AnchorStyles.Left }, 0, 0); layout.Controls.Add(cmbTable1, 1, 0);
+        layout.Controls.Add(new Label { Text = "Table 2:", Anchor = AnchorStyles.Left }, 0, 1); layout.Controls.Add(cmbTable2, 1, 1);
+
+        var btnOK = new Button { Text = "Join", DialogResult = DialogResult.OK };
+        btnOK.Click += (s, ev) =>
+        {
+            if (cmbTable1.SelectedItem.ToString() == cmbTable2.SelectedItem.ToString())
+            {
+                MessageBox.Show("Please select two different tables.");
+                return;
+            }
+            Table1 = cmbTable1.SelectedItem.ToString();
+            Table2 = cmbTable2.SelectedItem.ToString();
+        };
+
+        layout.Controls.Add(btnOK, 1, 2);
+        this.Controls.Add(layout);
+        this.AcceptButton = btnOK;
     }
 }
